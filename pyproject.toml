@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lmstop"
+version = "1.0.0"
+description = "Keep LM Studio from running out of unified GPU/system memory by ejecting idle models."
+readme = "README.md"
+authors = [{name = "shsmith"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = ["black", "flake8", "mypy"]
+
+[project.scripts]
+lmstop = "lmstop:main"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = "\\.pyi?$"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E501"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "*.pyc",
+]

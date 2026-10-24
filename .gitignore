@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+lmstop.log
+build/
+dist/
+*.spec
